@@ -17,7 +17,7 @@ class RegisterForm extends Component {
       password: this.state.password
     };
     axios
-      .post("http://localhost:5000/api/users/register", user)
+      .post("https://dalambdanotes.netlify.com/api/users/register", user)
       .then(response => {
         this.props.history.push(`/`).catch(err => {
           console.log(err);
@@ -57,6 +57,7 @@ class RegisterForm extends Component {
               placeholder="password"
               value={this.state.password}
               name="password"
+              type="password"
             />
             <button
               className="save__button"

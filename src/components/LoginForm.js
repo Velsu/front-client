@@ -17,7 +17,7 @@ class LoginForm extends Component {
       password: this.state.password
     };
     axios
-      .post("http://localhost:5000/api/users/login", user, {
+      .post("https://dalambdanotes.netlify.com/api/users/login", user, {
         withCredentials: true
       })
       .then(response => {
@@ -60,6 +60,7 @@ class LoginForm extends Component {
               placeholder="password"
               value={this.state.password}
               name="password"
+              type="password"
             />
             <button className="save__button" type="submit" onClick={this.login}>
               Login

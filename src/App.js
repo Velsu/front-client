@@ -69,7 +69,9 @@ class App extends Component {
 
   getNotes = () => {
     axios
-      .get("http://localhost:5000/api/notes", { withCredentials: true })
+      .get("https://dalambdanotes.netlify.com/api/notes", {
+        withCredentials: true
+      })
       .then(response => {
         this.setState({ notes: response.data.notes });
       })
@@ -81,7 +83,9 @@ class App extends Component {
   addNote = data => {
     data = { ...data };
     axios
-      .post("http://localhost:5000/api/notes", data, { withCredentials: true })
+      .post("https://dalambdanotes.netlify.com/api/notes", data, {
+        withCredentials: true
+      })
       .then(response => {
         console.log("Note added");
         this.getNotes();
@@ -97,7 +101,7 @@ class App extends Component {
     console.log(id);
     console.log(data);
     axios
-      .put(`http://localhost:5000/api/notes/${id}`, updateData, {
+      .put(`https://dalambdanotes.netlify.com/api/notes/${id}`, updateData, {
         withCredentials: true
       })
       .then(response => {
@@ -110,7 +114,7 @@ class App extends Component {
 
   deleteNote = id => {
     axios
-      .delete(`http://localhost:5000/api/notes/${id}`, {
+      .delete(`https://dalambdanotes.netlify.com/api/notes/${id}`, {
         withCredentials: true
       })
       .then(response => {
@@ -123,7 +127,9 @@ class App extends Component {
 
   logout = () => {
     axios
-      .get("http://localhost:5000/api/users/logout", { withCredentials: true })
+      .get("https://dalambdanotes.netlify.com/api/users/logout", {
+        withCredentials: true
+      })
       .then(response => {
         console.log("Logged out");
         this.setState({ notes: [], isLoggedIn: false });
