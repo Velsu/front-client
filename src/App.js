@@ -69,7 +69,7 @@ class App extends Component {
 
   getNotes = () => {
     axios
-      .get("https://dalambdanotes.netlify.com/api/notes", {
+      .get("https://dalambdanotes.herokuapp.com/api/notes", {
         withCredentials: true
       })
       .then(response => {
@@ -83,7 +83,7 @@ class App extends Component {
   addNote = data => {
     data = { ...data };
     axios
-      .post("https://dalambdanotes.netlify.com/api/notes", data, {
+      .post("https://dalambdanotes.herokuapp.com/api/notes", data, {
         withCredentials: true
       })
       .then(response => {
@@ -101,7 +101,7 @@ class App extends Component {
     console.log(id);
     console.log(data);
     axios
-      .put(`https://dalambdanotes.netlify.com/api/notes/${id}`, updateData, {
+      .put(`https://dalambdanotes.herokuapp.com/api/notes/${id}`, updateData, {
         withCredentials: true
       })
       .then(response => {
@@ -114,7 +114,7 @@ class App extends Component {
 
   deleteNote = id => {
     axios
-      .delete(`https://dalambdanotes.netlify.com/api/notes/${id}`, {
+      .delete(`https://dalambdanotes.herokuapp.com/api/notes/${id}`, {
         withCredentials: true
       })
       .then(response => {
@@ -127,7 +127,7 @@ class App extends Component {
 
   logout = () => {
     axios
-      .get("https://dalambdanotes.netlify.com/api/users/logout", {
+      .get("https://dalambdanotes.herokuapp.com/api/users/logout", {
         withCredentials: true
       })
       .then(response => {

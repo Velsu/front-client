@@ -17,7 +17,7 @@ class LoginForm extends Component {
       password: this.state.password
     };
     axios
-      .post("https://dalambdanotes.netlify.com/api/users/login", user, {
+      .post("https://dalambdanotes.herokuapp.com/api/users/login", user, {
         withCredentials: true
       })
       .then(response => {
